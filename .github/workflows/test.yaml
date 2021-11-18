@@ -12,6 +12,8 @@ jobs:
           path: devmapper-containerd-action
       - name: Containerd and devmapper
         uses: yitsushi/devmapper-containerd-action@main
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: Check
         run: |
           sudo ctr --debug plugin ls
