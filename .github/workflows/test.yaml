@@ -15,9 +15,15 @@ jobs:
       - name: Check
         run: |
           sudo ctr --debug plugin ls
+
+          echo "::debug::Pull image with snapshotter"
+          ctr images pull --snapshotter devmapper docker.io/library/hello-world:latest
+
+          echo "ctr --debug images ls"
           sudo ctr --debug images ls
+
+          echo "ctr --debug snapshots ls"
           sudo ctr --debug snapshots ls
+
+          echo "sudo ctr --debug snapshots --snapshotter=devmapper ls"
           sudo ctr --debug snapshots --snapshotter=devmapper ls
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
