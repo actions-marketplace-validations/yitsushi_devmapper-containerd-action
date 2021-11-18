@@ -1,7 +1,7 @@
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/dependencies.sh
+    - run: sudo ${{ github.action_path }}/dependencies.sh
       shell: bash
-    - run: ${{ github.action_path }}/devpool.sh
+    - run: sudo ${{ github.action_path }}/devpool.sh
       shell: bash
