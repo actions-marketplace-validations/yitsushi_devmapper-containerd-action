@@ -5,7 +5,9 @@ runs:
       run: sudo ${{ github.action_path }}/dependencies.sh
       shell: bash
     - name: Configure thin-pool
-      run: sudo ${{ github.action_path }}/devpool.sh
+      run: |
+        sudo ${{ github.action_path }}/devpool.sh
+        sudo dmsetup ls
       shell: bash
     - name: Configure containerd
       run: |
