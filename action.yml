@@ -5,5 +5,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ls -la
+    - run: ${{ github.action_path }}/dependencies.sh
+      shell: bash
+    - run: ${{ github.action_path }}/devpool.sh
       shell: bash

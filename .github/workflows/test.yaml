@@ -1,7 +1,7 @@
 name: Test
-on: [push]
+on: [workflow_dispatch]
 
-job:
+jobs:
   test:
     name: test
     runs-on: ubuntu-latest
@@ -10,5 +10,5 @@ job:
         uses: actions/checkout@v2
         with:
           path: devmapper-containerd-action
-      - name: mystuff
-        uses: ./
+      - name: Containerd and devmapper
+        uses: yitsushi/devmapper-containerd-action@main
