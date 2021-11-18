@@ -1,3 +1,6 @@
+name: Containerd with devmapper
+description: Install and configure containerd with devmapper thin-pool
+
 runs:
   using: "composite"
   steps:
