@@ -1,6 +1,10 @@
 NOPE
 
 ```
+++ dmsetup reload dev-thinpool --table '0 209715200 thin-pool /dev/loop4 /dev/loop3 128 32768 1 skip_block_zeroing'
+device-mapper: reload ioctl on dev-thinpool  failed: No such device or address
+Command failed.
+
 | + dmsetup create dev-thinpool --table '0  thin-pool   128 32768 1 skip_block_zeroing'
 | /dev/mapper/control: open failed: Operation not permitted
 | Failure to communicate with kernel device-mapper driver.

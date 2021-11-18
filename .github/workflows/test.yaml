@@ -12,3 +12,8 @@ jobs:
           path: devmapper-containerd-action
       - name: Containerd and devmapper
         uses: yitsushi/devmapper-containerd-action@main
+      - name: Check
+        run: |
+          sudo ctr --debug images ls
+          sudo ctr --debug snapshots ls
+          sudo ctr --debug snapshots --snapshotter=devmapper ls
