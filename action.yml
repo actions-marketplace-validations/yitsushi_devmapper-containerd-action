@@ -5,7 +5,7 @@ runs:
       shell: bash
     - run: sudo ${{ github.action_path }}/devpool.sh
       shell: bash
-    - run: sudo mkdir -o /etc/containerd
+    - run: sudo mkdir -p /etc/containerd
       shell: bash
     - run: sudo cp ${{ github.action_path }}/containerd.conf /etc/containerd/config.toml
       shell: bash
