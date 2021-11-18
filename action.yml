@@ -1,0 +1,9 @@
+inputs:
+
+outputs:
+
+runs:
+  using: "composite"
+  steps:
+    - run: ls -la
+      shell: bash

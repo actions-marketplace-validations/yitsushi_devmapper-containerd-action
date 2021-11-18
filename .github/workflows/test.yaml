@@ -1,0 +1,14 @@
+name: Test
+on: [push]
+
+job:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: devmapper-containerd-action
+      - name: mystuff
+        uses: ./
