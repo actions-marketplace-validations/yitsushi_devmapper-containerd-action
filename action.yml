@@ -1,5 +1,10 @@
 name: Containerd with devmapper
 description: Install and configure containerd with devmapper thin-pool
+author: Balazs Nadasdi
+
+branding:
+  icon: box
+  color: blue
 
 runs:
   using: "composite"
