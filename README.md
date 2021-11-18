@@ -1,3 +1,29 @@
+# Containerd with devmapper
+
+```
+name: Test
+on: [workflow_dispatch]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: devmapper-containerd-action
+      - name: Containerd and devmapper
+        uses: yitsushi/devmapper-containerd-action@main
+      - name: Check
+        run: |
+          sudo ctr --debug images ls
+          sudo ctr --debug snapshots ls
+          sudo ctr --debug snapshots --snapshotter=devmapper ls
+```
+
+## With act
+
 NOPE
 
 ```

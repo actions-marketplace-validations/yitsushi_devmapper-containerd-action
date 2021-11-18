@@ -1,13 +1,18 @@
 runs:
   using: "composite"
   steps:
-    - run: sudo ${{ github.action_path }}/dependencies.sh
+    - name: Install Dependencies
+      run: sudo ${{ github.action_path }}/dependencies.sh
       shell: bash
-    - run: sudo ${{ github.action_path }}/devpool.sh
+    - name: Configure thin-pool
+      run: sudo ${{ github.action_path }}/devpool.sh
       shell: bash
-    - run: sudo mkdir -p /etc/containerd
+    - name: Configure containerd
+      run: |
+        sudo mkdir -p /etc/containerd
+        sudo mkdir -p /var/lib/containerd/snapshotter/devmapper
+        sudo cp ${{ github.action_path }}/containerd.toml /etc/containerd/config.toml
       shell: bash
-    - run: sudo cp ${{ github.action_path }}/containerd.conf /etc/containerd/config.toml
-      shell: bash
-    - run: sudo containerd --config /etc/containerd/config.toml &
+    - name: Start containerd
+      run: sudo containerd --config /etc/containerd/config.toml &
       shell: bash
