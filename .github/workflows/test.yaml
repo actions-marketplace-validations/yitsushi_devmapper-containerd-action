@@ -14,6 +14,7 @@ jobs:
         uses: yitsushi/devmapper-containerd-action@main
       - name: Check
         run: |
-          sudo ctr --address=/run/containerd/containerd.sock --debug images ls
-          sudo ctr --address=/run/containerd/containerd.sock --debug snapshots ls
-          sudo ctr --address=/run/containerd/containerd.sock --debug snapshots --snapshotter=devmapper ls
+          sudo ctr --debug plugin ls
+          sudo ctr --debug images ls
+          sudo ctr --debug snapshots ls
+          sudo ctr --debug snapshots --snapshotter=devmapper ls
