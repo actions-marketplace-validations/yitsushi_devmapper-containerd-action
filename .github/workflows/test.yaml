@@ -1,5 +1,5 @@
 name: Test
-on: [workflow_dispatch]
+on: [push]
 
 jobs:
   test:
@@ -14,6 +14,6 @@ jobs:
         uses: yitsushi/devmapper-containerd-action@main
       - name: Check
         run: |
-          sudo ctr --debug images ls
-          sudo ctr --debug snapshots ls
-          sudo ctr --debug snapshots --snapshotter=devmapper ls
+          sudo ctr --address=/run/containerd/containerd.sock --debug images ls
+          sudo ctr --address=/run/containerd/containerd.sock --debug snapshots ls
+          sudo ctr --address=/run/containerd/containerd.sock --debug snapshots --snapshotter=devmapper ls
