@@ -17,7 +17,7 @@ jobs:
           sudo ctr --debug plugin ls
 
           echo "::debug::Pull image with snapshotter"
-          ctr images pull --snapshotter devmapper docker.io/library/hello-world:latest
+          sudo ctr images pull --snapshotter devmapper docker.io/library/hello-world:latest
 
           echo "ctr --debug images ls"
           sudo ctr --debug images ls
