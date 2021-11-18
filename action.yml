@@ -1,7 +1,3 @@
-inputs:
-
-outputs:
-
 runs:
   using: "composite"
   steps:
